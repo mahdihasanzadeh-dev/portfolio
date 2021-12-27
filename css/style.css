@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ------
+fonts
+--------*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@400;500;600&display=swap');
+/* ------
+global style
+------- */
+body{
+    @apply text-base overflow-x-hidden leading-6
+}
+*:not(i){
+    font-family: 'Raleway',sans-serif;
+    font-weight: 400;
+}
+*{
+    @apply box-border
+}
+.container{
+    @apply m-auto
+}
+.row{
+    @apply flex flex-wrap
+}
+/* --------
+header
+----------*/
+.header{
+    @apply  py-5 px-4 absolute w-full top-0 left-0 z-50
+}
+.header .logo a{
+    @apply inline-block w-10 h-10 text-center leading-9 border-2 border-red-light text-2xl text-red-light rounded-full font-semibold uppercase
+}
+.header .hamburger-btn{
+    @apply w-10 h-10 bg-blue
+}
