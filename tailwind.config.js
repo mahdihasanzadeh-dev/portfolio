@@ -6,6 +6,7 @@ module.exports = {
       transparent: 'transparent',
       gray: colors.gray,
       violet: colors.violet,
+      neutral: colors.neutral,
       red:{
         DEFAULT:'#cc3a3b',
         light:'#fb839e'
@@ -14,7 +15,13 @@ module.exports = {
       green:'#1fc586',
       blue:'#2eb1ed'
     },
-    extend: {},
+    extend: {
+      boxShadow:{
+        'outer':'var(--outer-shadow)',
+        'outer-0':'var(--outer-shadow-0)',
+        'inner':'var(--inner-shadow)'
+      }
+    },
   },
   plugins: [],
 }

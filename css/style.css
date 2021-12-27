@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base{
+    :root{
+        --outer-shadow:3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+        --outer-shadow-0:0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+        --inner-shadow:inset 3px 3px 3px #d0d0d0,inset -3px -3px 3px #f8f8f8;
+    }
+}
+
+
 /* ------
 fonts
 --------*/
@@ -9,7 +18,7 @@ fonts
 global style
 ------- */
 body{
-    @apply text-base overflow-x-hidden leading-6
+    @apply text-base overflow-x-hidden leading-6 bg-neutral-50
 }
 *:not(i){
     font-family: 'Raleway',sans-serif;
@@ -24,6 +33,15 @@ body{
 .row{
     @apply flex flex-wrap
 }
+.hover-in-shadow{
+   @apply relative z-10 shadow-outer  hover:shadow-outer-0 
+}
+.hover-in-shadow::after{
+    @apply content-[''] absolute left-0 top-0 w-full h-full transition-all
+}
+.hover-in-shadow:hover:after{
+    @apply shadow-inner
+}
 /* --------
 header
 ----------*/
@@ -34,5 +52,13 @@ header
     @apply inline-block w-10 h-10 text-center leading-9 border-2 border-red-light text-2xl text-red-light rounded-full font-semibold uppercase
 }
 .header .hamburger-btn{
-    @apply w-10 h-10 bg-blue
+    @apply flex items-center justify-center w-10 h-10  flex-col cursor-pointer rounded-full transition-all relative z-10 after:rounded-[24px]
+}
+.header .hamburger-btn span{
+    height: 2px;
+    @apply block  w-4 bg-neutral-900 relative mt-1
+}
+.header .hamburger-btn span::before,
+.header .hamburger-btn span::after{
+    @apply content-[''] absolute left-0 w-full h-full bg-neutral-900
 }
