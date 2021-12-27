@@ -70,6 +70,12 @@ body{
 .effect-5 div{
     @apply w-[1px] bg-[#4dd0e1] 
 }
+.section-title{
+    @apply bg-transparent py-0 px-4 flex-shrink-0 flex-grow-0 basis-full max-w-full text-center mb-14
+}
+.section-title h2{
+    @apply bg-transparent inline-block text-xl font-bold text-neutral-900 uppercase m-0 before:content-[attr(data-heading)] before:block before:text-sm before:font-semibold before:text-red-light
+}
 /* ---
 header
 ------*/
@@ -149,4 +155,40 @@ home section
 }
 .home-section .home-img .img-box img{
     @apply w-full rounded-full border-[10px] border-solid border-transparent
+}
+/* ----------
+about section
+-----------*/
+.about-section{
+    @apply bg-transparent py-20 px-0 min-h-screen
+}
+.about-section .about-img{
+    @apply bg-transparent flex-shrink-0 flex-grow-0 basis-2/5 max-w-[40%] py-0 px-4
+}
+.about-section .about-img .social-links{
+    @apply bg-transparent mt-5 text-center
+}
+.about-section .about-img .social-links a{
+    @apply inline-block w-10 h-10 rounded-full text-base text-center  text-neutral-600 mx-1 transition-all after:rounded-full hover:text-red-light
+}
+.about-section .about-img .social-links a i{
+    @apply leading-10
+}
+.about-section .about-img .img-box{
+    @apply p-4 rounded
+}
+.about-section .about-img .img-box img{
+    @apply w-full border-[10px] border-transparent rounded
+}
+.about-section .about-info{
+    @apply bg-transparent flex-shrink-0 flex-grow-0 basis-3/5 max-w-[60%]  py-0 px-4
+}
+.about-section .about-info p{
+    @apply text-base leading-6 mb-4 text-neutral-600
+}
+.about-section .about-info span{
+    @apply font-semibold
+}
+.about-section .about-info .btn-1{
+    @apply mt-8 ml-5
 }
