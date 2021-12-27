@@ -20,6 +20,17 @@ module.exports = {
         'outer':'var(--outer-shadow)',
         'outer-0':'var(--outer-shadow-0)',
         'inner':'var(--inner-shadow)'
+      },
+      animation:{
+        'spin-slow':'spin 10s linear infinite',
+        'bounce-slow':'bounce 2s ease-in-out infinite',
+        'leftBounce':'leftBounce 3s ease-in-out infinite'
+      },
+      keyframes: {
+        leftBounce: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(25px)' },
+        }
       }
     },
   },
