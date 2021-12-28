@@ -19,7 +19,8 @@ module.exports = {
       boxShadow:{
         'outer':'var(--outer-shadow)',
         'outer-0':'var(--outer-shadow-0)',
-        'inner':'var(--inner-shadow)'
+        'inner':'var(--inner-shadow)',
+        'inner-0':'var(--inner-shadow-0)'
       },
       animation:{
         'spin-slow':'spin 10s linear infinite',
