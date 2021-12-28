@@ -24,12 +24,17 @@ module.exports = {
       animation:{
         'spin-slow':'spin 10s linear infinite',
         'bounce-slow':'bounce 2s ease-in-out infinite',
-        'leftBounce':'leftBounce 3s ease-in-out infinite'
+        'leftBounce':'leftBounce 3s ease-in-out infinite',
+        'fadeInTop':'fadeInTop 0.5s ease'
       },
       keyframes: {
         leftBounce: {
           '0%, 100%': { transform: 'translateX(0)' },
           '50%': { transform: 'translateX(25px)' },
+        },
+        fadeInTop:{
+          '0%': { opacity:0,transform: 'translateY(-25px)' },
+          '100%': { opacity:1,transform: 'translateY(0px)' },
         }
       }
     },
