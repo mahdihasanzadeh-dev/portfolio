@@ -326,3 +326,54 @@ service section
 .service-section .service-container .service-item .service-item-inner p{
     @apply text-base  text-neutral-600 leading-7 text-center
 }
+/* --------------
+portfolio section
+---------------*/
+.portfolio-section{
+    @apply bg-transparent py-20 min-h-screen
+}
+.portfolio-section .section-title{
+    @apply mb-10
+}
+.portfolio-section .portfolio-filter{
+    @apply bg-transparent px-4 flex-shrink-0 flex-grow-0 basis-full max-w-full text-center mb-5
+}
+.portfolio-section .filter-item{
+    @apply inline-block mb-3 mx-4 py-1 px-3 rounded-full cursor-pointer font-medium text-neutral-600 capitalize text-base transition-all
+}
+.portfolio-section .filter-item:hover:not(.active){
+    @apply opacity-60
+}
+.portfolio-section .filter-item.active{
+    @apply text-red-light
+}
+.portfolio-section .portfolio-items{
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
+}
+.portfolio-section .portfolio-item{
+    @apply p-4 flex flex-wrap
+}
+.portfolio-section .portfolio-item-inner{
+    @apply p-4 rounded cursor-pointer w-full
+}
+.portfolio-section .portfolio-item-img{
+    @apply relative
+}
+.portfolio-section .portfolio-item-img img{
+    @apply rounded w-full transition-all
+}
+.portfolio-section .portfolio-item-inner:hover .portfolio-item-img img{
+    @apply -translate-y-6
+}
+.portfolio-section .portfolio-item-img .view-project{
+    @apply capitalize text-base font-medium text-red-light transition-all absolute left-0 -bottom-1 -translate-y-1 -z-10 opacity-0
+}
+.portfolio-section .portfolio-item-inner:hover .view-project{
+    @apply translate-y-0 opacity-100
+}
+.portfolio-section .portfolio-item-details{
+    @apply hidden
+}
+.portfolio-section .portfolio-item-inner p{
+    @apply text-base text-neutral-600 capitalize mt-3
+}
