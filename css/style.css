@@ -20,7 +20,7 @@ fonts
 global style
 --------- */
 body{
-    @apply text-base overflow-x-hidden leading-6 bg-neutral-50
+    @apply text-base overflow-x-hidden  leading-6 bg-neutral-50
 }
 *:not(i){
     font-family: 'Raleway',sans-serif;
@@ -376,4 +376,88 @@ portfolio section
 }
 .portfolio-section .portfolio-item-inner p{
     @apply text-base text-neutral-600 capitalize mt-3
+}
+/* ------------
+portfolio-popup
+-------------*/
+.portfolio-popup{
+    @apply bg-neutral-50 fixed top-0 left-0 w-full h-full z-50 overflow-y-auto
+    opacity-0 hidden
+}
+.portfolio-popup .pp-details{
+    @apply bg-transparent max-w-[1350px] w-5/6 m-auto 
+    max-h-0 overflow-hidden opacity-0
+}
+.portfolio-popup .pp-details-inner{
+    @apply py-8
+}
+.portfolio-popup .pp-title{
+    @apply px-4
+}
+.portfolio-popup .pp-title h2{
+    @apply text-3xl text-neutral-900 capitalize font-semibold mb-1
+}
+.portfolio-popup .pp-title p{
+    @apply text-sm font-semibold text-neutral-600 mb-4 pb-3 border-b border-neutral-300
+}
+.portfolio-popup .pp-title p span{
+    @apply font-normal
+}
+.portfolio-popup .pp-project-details h3{
+    @apply text-xl font-semibold text-neutral-700 mb-4 capitalize
+}
+.portfolio-popup .pp-details-inner .pp-project-details .row{
+    @apply grid grid-cols-3
+}
+.portfolio-popup .pp-details-inner .description{
+    @apply col-span-2 px-4
+}
+.portfolio-popup .pp-details-inner .description p{
+    @apply text-neutral-600  text-sm leading-6
+}
+.portfolio-popup .pp-details-inner .info{
+    @apply col-span-1
+}
+.portfolio-popup .pp-details-inner .info ul li{
+    @apply mb-3 last:mb-0 text-base text-neutral-600 font-semibold
+}
+.portfolio-popup .pp-details-inner .info ul li span{
+    @apply font-normal
+}
+.portfolio-popup .separator{
+    @apply h-[1px] w-full bg-neutral-200
+}
+.portfolio-popup .pp-main{
+    @apply  min-h-screen max-w-[1350px] w-5/6 m-auto flex items-center justify-center
+}
+.portfolio-popup .pp-main-inner{
+    @apply bg-transparent pt-16 pb-12 relative
+}
+.portfolio-popup .pp-project-details-btn{
+    @apply bg-transparent absolute left-0 top-4 h-10 leading-10 text-base font-medium text-red-light rounded-full after:rounded-full cursor-pointer px-4 transition-all
+}
+.portfolio-popup .pp-project-details-btn i{
+    @apply ml-1
+}
+.portfolio-popup .pp-close{
+    @apply bg-transparent absolute right-0 w-10 h-10 top-4 rounded-full after:rounded-full flex items-center justify-center text-4xl text-neutral-600 cursor-pointer transition-all
+}
+.portfolio-popup .pp-img{
+    @apply max-w-full w-auto h-auto p-3 rounded
+}
+.portfolio-popup .pp-counter{
+    @apply absolute right-0 h-10 leading-10 bottom-1 text-base text-neutral-600
+}
+.portfolio-popup .pp-next,
+.portfolio-popup .pp-prev{
+    @apply fixed top-2/4 w-10 h-10 bg-transparent text-center text-xl flex items-center justify-center cursor-pointer z-[60] text-neutral-600 transition-all opacity-50 hover:opacity-100
+}
+.portfolio-popup .pp-prev{
+    @apply left-4
+}
+.portfolio-popup .pp-prev i{
+    @apply rotate-180
+}
+.portfolio-popup .pp-next{
+    @apply right-4
 }
