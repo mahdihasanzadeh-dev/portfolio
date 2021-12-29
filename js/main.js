@@ -161,3 +161,50 @@ function bodyScrollingToggle(){
     }
 
 })();
+
+
+/*--------------- testimonial ----------------*/
+(()=>{
+    const sliderContainer = document.querySelector('.testi-slider-container');
+    const slides = sliderContainer.querySelectorAll('.testi-item');
+    let slideWidth = sliderContainer.offsetWidth;
+    const prevBtn = document.querySelector('.testi-slider-nav .prev')
+    const nextBtn = document.querySelector('.testi-slider-nav .next')
+    const activeSlide = sliderContainer.querySelector('.testi-item.active')
+    let slideIndex = Array.from(activeSlide.parentElement.children).indexOf(activeSlide);
+    if(slideWidth>600){
+        slideWidth = 600
+    }
+    // set width of all slides
+    slides.forEach((slide)=>{
+        slide.style.width = `${slideWidth}px`
+    })
+    sliderContainer.style.width = `${slideWidth * slides.length}px`
+
+    nextBtn.addEventListener('click',()=>{
+        if(slideIndex===slides.length-1){
+            slideIndex=0
+        }
+        else{
+            slideIndex++
+        }
+        slider()
+    })
+    prevBtn.addEventListener('click',()=>{
+        if(slideIndex===0){
+            slideIndex=slides.length-1
+        }
+        else{
+            slideIndex--
+        }
+        slider()
+    })
+    function slider(){
+        //deactive existing active slides
+        sliderContainer.querySelector('.testi-item.active').classList.remove('active')
+        //active new slide
+        slides[slideIndex].classList.add('active')
+        sliderContainer.style.marginLeft = `${-(slideWidth * slideIndex)}px`
+    }
+    slider()
+})();

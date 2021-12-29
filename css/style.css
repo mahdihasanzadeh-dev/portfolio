@@ -390,7 +390,7 @@ portfolio section
 portfolio-popup
 -------------*/
 .portfolio-popup{
-    @apply bg-neutral-50 fixed top-0 left-0 w-full h-full z-50 overflow-y-scroll transition-all
+    @apply bg-neutral-50 fixed top-0 left-0 w-full h-full z-50 overflow-y-scroll transition-all overflow-x-hidden box-border
     opacity-0 hidden
 }
 .portfolio-popup.open{
@@ -488,4 +488,43 @@ portfolio-popup
 }
 .portfolio-popup .pp-next{
     @apply right-4
+}
+/* ---------------
+testimonial-secion
+-------------- */
+.testimonial-secion{
+    @apply py-20 min-h-screen
+}
+.testimonial-secion .testi-box{
+    @apply bg-transparent  max-w-[600px] w-full m-auto px-4
+}
+.testimonial-secion .testi-slider {
+    @apply rounded-md overflow-hidden
+}
+.testimonial-secion .testi-slider .testi-slider-container{
+    @apply flex transition-margin duration-1000 items-center
+}
+.testimonial-secion .testi-item{
+    @apply p-7 text-center
+}
+.testimonial-secion .testi-item i{
+    @apply absolute text-3xl text-neutral-600 opacity-10
+}
+.testimonial-secion .testi-item p{
+    @apply text-base leading-7 text-neutral-600 mb-8 mt-3
+}
+.testimonial-secion .testi-item img{
+    @apply inline-block w-full max-w-[70px]
+}
+.testimonial-secion .testi-item span{
+    @apply mt-3 text-base font-semibold text-neutral-700 capitalize block
+}
+.testimonial-secion .testi-slider-nav{
+    @apply mt-8 text-center 
+}
+.testimonial-secion .testi-slider-nav span{
+    @apply w-10 h-10 rounded-full after:rounded-full text-red-light cursor-pointer transition-all text-xl inline-block last:ml-2
+}
+.testimonial-secion .testi-slider-nav span i{
+    @apply leading-10
 }
