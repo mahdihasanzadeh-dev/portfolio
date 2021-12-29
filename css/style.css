@@ -353,6 +353,12 @@ portfolio section
 .portfolio-section .portfolio-item{
     @apply p-4 flex flex-wrap
 }
+.portfolio-section .portfolio-item.hide{
+    @apply hidden
+}
+.portfolio-section .portfolio-item.show{
+    @apply block animate-fadeInTop
+}
 .portfolio-section .portfolio-item-inner{
     @apply p-4 rounded cursor-pointer w-full
 }
