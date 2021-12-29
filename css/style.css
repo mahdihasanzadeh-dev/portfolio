@@ -22,7 +22,7 @@ global style
 body{
     @apply text-base overflow-x-hidden  leading-6 bg-neutral-50
 }
-body.stop-scrolling{
+body.hidden-scrolling{
     @apply overflow-y-hidden
 }
 *:not(i){
@@ -396,9 +396,13 @@ portfolio-popup
 .portfolio-popup.open{
     @apply block opacity-100
 }
+
 .portfolio-popup .pp-details{
     @apply bg-transparent max-w-[1350px] w-5/6 m-auto 
-    max-h-0 overflow-hidden opacity-0
+    max-h-0 overflow-hidden opacity-0 transition-all
+}
+.portfolio-popup .pp-details.active{
+    @apply opacity-100
 }
 .portfolio-popup .pp-details-inner{
     @apply py-8
@@ -413,7 +417,7 @@ portfolio-popup
     @apply text-sm font-semibold text-neutral-600 mb-4 pb-3 border-b border-neutral-300
 }
 .portfolio-popup .pp-title p span{
-    @apply font-normal
+    @apply font-normal capitalize
 }
 .portfolio-popup .pp-project-details h3{
     @apply text-xl font-semibold text-neutral-700 mb-4 capitalize
@@ -435,6 +439,9 @@ portfolio-popup
 }
 .portfolio-popup .pp-details-inner .info ul li span{
     @apply font-normal
+}
+.portfolio-popup .pp-details-inner .info ul li a{
+    @apply text-red-light
 }
 .portfolio-popup .separator{
     @apply h-[1px] w-full bg-neutral-200
@@ -459,6 +466,15 @@ portfolio-popup
 }
 .portfolio-popup .pp-counter{
     @apply absolute right-0 h-10 leading-10 bottom-1 text-base text-neutral-600
+}
+.portfolio-popup .pp-loader{
+    @apply fixed left-0 top-0 w-full h-full bg-bgOpacity z-[100] flex items-center justify-center invisible opacity-0
+}
+.portfolio-popup .pp-loader.acive{
+    @apply visible opacity-100
+}
+.portfolio-popup .pp-loader div{
+    @apply w-10 h-10 border-4 border-red-light rounded-full border-r-[3px] border-r-transparent animate-spin 
 }
 .portfolio-popup .pp-next,
 .portfolio-popup .pp-prev{

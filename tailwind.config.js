@@ -13,7 +13,8 @@ module.exports = {
       },
       orange:'#ec9412',
       green:'#1fc586',
-      blue:'#2eb1ed'
+      blue:'#2eb1ed',
+      bgOpacity:'rgba(255,255,255,0.5)'
     },
     extend: {
       boxShadow:{
