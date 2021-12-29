@@ -470,7 +470,7 @@ portfolio-popup
 .portfolio-popup .pp-loader{
     @apply fixed left-0 top-0 w-full h-full bg-bgOpacity z-[100] flex items-center justify-center invisible opacity-0
 }
-.portfolio-popup .pp-loader.acive{
+.portfolio-popup .pp-loader.active{
     @apply visible opacity-100
 }
 .portfolio-popup .pp-loader div{
