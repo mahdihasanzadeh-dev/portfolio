@@ -87,7 +87,7 @@ function bodyScrollingToggle(){
         bodyScrollingToggle()
     }
     function popupSlideshow(){
-        const imgSrc = screenShots[slideIndex]
+        const imgSrc = screenShots[slideIndex].trim()
         const popupImg = popup.querySelector('.pp-img')
         // activate loader until the popup image loaded
         popup.querySelector('.pp-loader').classList.add('active')
