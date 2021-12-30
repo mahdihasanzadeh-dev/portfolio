@@ -42,7 +42,7 @@ body.hidden-scrolling{
    @apply relative z-10 shadow-outer  hover:shadow-outer-0 hover:after:shadow-inner
 }
 .hover-in-shadow::after{
-    @apply content-[''] absolute left-0 top-0 w-full h-full transition-all
+    @apply content-[''] absolute left-0 top-0 w-full h-full transition-all -z-10
 }
 .btn-1{
  @apply py-2 px-6 text-base font-medium text-red-light bg-transparent leading-6 cursor-pointer rounded-[30px] transition-all inline-block after:rounded-[30px]
@@ -505,7 +505,7 @@ testimonial-secion
     @apply flex transition-margin duration-1000 items-center
 }
 .testimonial-secion .testi-item{
-    @apply p-7 text-center
+    @apply p-7 text-center relative
 }
 .testimonial-secion .testi-item i{
     @apply absolute text-3xl text-neutral-600 opacity-10
@@ -527,4 +527,40 @@ testimonial-secion
 }
 .testimonial-secion .testi-slider-nav span i{
     @apply leading-10
+}
+/* ------------
+contact section
+------------ */
+.contact-section{
+    @apply py-20 min-h-screen w-full
+}
+.contact-section .contact-item-container{
+    @apply w-full grid grid-cols-1 sm:grid-cols-3 gap-6 px-2 sm:px-0
+}
+.contact-section .contact-item{
+    @apply flex flex-col items-center  py-8 px-4
+}
+.contact-section .contact-item i{
+    @apply text-red-light text-2xl
+}
+.contact-section .contact-item span{
+    @apply text-base font-semibold text-neutral-700 mt-3 mb-2
+}
+.contact-section .contact-item p{
+    @apply text-base text-neutral-600 leading-6 text-center break-words w-full
+}
+.contact-section .contact-form{
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14 w-full text-base text-neutral-700 px-2 sm:px-0
+}
+.contact-section .contact-form .input-group{
+    @apply grid grid-cols-1 gap-6 
+}
+.contact-section .contact-form .input-group input{
+    @apply rounded-3xl h-10 px-3 outline-none bg-transparent transition-all  hover:shadow-inner
+}
+.contact-section .contact-form textarea{
+    @apply w-full h-44 sm:h-full rounded-3xl px-3 py-2 outline-none bg-transparent transition-all hover:shadow-inner
+}
+.contact-section .submit-btn{
+    @apply flex justify-center sm:justify-end py-5
 }
