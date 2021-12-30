@@ -11,12 +11,14 @@
         }
     })
 
-
-    function setActiveStyle(selectedColor){
+    const colors =document.querySelectorAll('.colors span')
+    colors.forEach(color=>color.addEventListener('click',setActiveStyle))
+    function setActiveStyle(event){
+        const selectedColor = event.target.getAttribute('data-color')
         const root = document.querySelector(':root');
         const rootStyle = getComputedStyle(root);
         if(rootStyle.getPropertyValue('--skin')!==selectedColor){
             root.style.setProperty('--skin', selectedColor);
         }
-        
     }
+    
