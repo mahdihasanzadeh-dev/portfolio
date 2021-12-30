@@ -282,17 +282,17 @@ about section
     @apply flex-grow-0 flex-shrink-0 basis-full max-w-full relative
 }
 .about-section .timeline::before{
-    @apply content-[''] w-[1px] h-full absolute bg-neutral-200 left-2/4 top-0
+    @apply content-[''] w-[1px] h-full absolute bg-neutral-200 left-9 sm:left-2/4 top-0
 }
 .about-section .timeline .timeline-item{
-    @apply flex-grow-0 flex-shrink-0 basis-full max-w-full 
+    @apply flex-grow-0 flex-shrink-0 basis-full max-w-full mt-8 sm:mt-0
 }
 .about-section .timeline .timeline-item:nth-child(odd){
     padding-right: calc(50% + 50px);
-    text-align: right;
+    @apply pr-4 pl-[75px] text-left sm:text-right sm:pr-[calc(50%+50px)] sm:pl-0
 }
 .about-section .timeline .timeline-item:nth-child(even){
-    padding-left: calc(50% + 50px);
+    @apply pl-[75px] sm:pl-[calc(50%+50px)]
 }
 .about-section .timeline .timeline-item-inner{
     @apply p-7 rounded-md relative
@@ -301,7 +301,7 @@ about section
     @apply content-[''] absolute w-7 h-[1px] bg-neutral-200 top-9 -z-10
 }
 .about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner::before{
-    @apply -right-7
+    @apply -left-7 sm:-right-7 sm:left-auto
 }
 .about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner::before{
     @apply -left-7
@@ -310,7 +310,7 @@ about section
     @apply w-10 h-10 text-center leading-10 absolute top-4 text-base border bg-neutral-50 border-neutral-200 rounded-full text-skin
 }
 .about-section .timeline .timeline-item:nth-child(odd) .icon{
-    @apply -right-[70px]
+    @apply right-auto -left-[60px] sm:left-auto sm:-right-[70px]
 }
 .about-section .timeline .timeline-item:nth-child(even) .icon{
     @apply -left-[70px]
