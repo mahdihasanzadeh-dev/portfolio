@@ -7,6 +7,7 @@ module.exports = {
       gray: colors.gray,
       violet: colors.violet,
       neutral: colors.neutral,
+      skin:'var(--skin)',
       red:{
         DEFAULT:'#cc3a3b',
         light:'#fb839e'

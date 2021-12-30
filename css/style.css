@@ -12,6 +12,7 @@ fonts
         --outer-shadow-0:0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
         --inner-shadow:inset 3px 3px 3px #d0d0d0,inset -3px -3px 3px #f8f8f8;
         --inner-shadow-0:inset 0 0 0 #d0d0d0,inset 0 0 0 #f8f8f8;
+        --skin:#fb839e;
     }
 }
 
@@ -45,7 +46,7 @@ body.hidden-scrolling{
     @apply content-[''] absolute left-0 top-0 w-full h-full transition-all -z-10
 }
 .btn-1{
- @apply py-2 px-6 text-base font-medium text-red-light bg-transparent leading-6 cursor-pointer rounded-[30px] transition-all inline-block after:rounded-[30px]
+ @apply py-2 px-6 text-base font-medium text-skin bg-transparent leading-6 cursor-pointer rounded-[30px] transition-all inline-block after:rounded-[30px]
 }
 .effect-wrap .effect {
     @apply -z-10 absolute
@@ -60,7 +61,7 @@ body.hidden-scrolling{
     @apply w-1 h-1 bg-[#ff9c07] rounded-full
 }
 .effect-3{
-    @apply h-44 w-44 border-[25px] border-solid border-red-light rounded-full left-2/4 -top-28 animate-leftBounce
+    @apply h-44 w-44 border-[25px] border-solid border-skin rounded-full left-2/4 -top-28 animate-leftBounce
 }
 .effect-4{
     @apply border-t-[30px] border-t-transparent border-l-[30px] border-l-[#06d79c] left-1/3 top-[20%] animate-spin-slow
@@ -78,7 +79,7 @@ body.hidden-scrolling{
     @apply bg-transparent py-0 px-4 flex-shrink-0 flex-grow-0 basis-full max-w-full text-center mb-14
 }
 .section-title h2{
-    @apply bg-transparent inline-block text-xl font-bold text-neutral-900 uppercase m-0 before:content-[attr(data-heading)] before:block before:text-sm before:font-semibold before:text-red-light
+    @apply bg-transparent inline-block text-xl font-bold text-neutral-900 uppercase m-0 before:content-[attr(data-heading)] before:block before:text-sm before:font-semibold before:text-skin
 }
 .section.hide{
     @apply hidden
@@ -90,7 +91,7 @@ header
     @apply  py-5 px-4 absolute w-full top-0 left-0 z-50
 }
 .header .logo a{
-    @apply inline-block w-10 h-10 text-center leading-9 border-2 border-red-light text-2xl text-red-light rounded-full font-semibold uppercase
+    @apply inline-block w-10 h-10 text-center leading-9 border-2 border-skin text-2xl text-skin rounded-full font-semibold uppercase
 }
 .header .hamburger-btn{
     @apply flex items-center justify-center w-10 h-10  flex-col cursor-pointer rounded-full transition-all relative z-10 after:rounded-[24px]
@@ -134,7 +135,7 @@ navigation menu
     @apply inline-block text-3xl  font-semibold text-neutral-700 py-1 px-7 rounded-3xl capitalize transition-all after:rounded-3xl 
 }
 .nav-menu-inner ul li a.active{
-    @apply text-red-light
+    @apply text-skin
 }
 .nav-menu .copyright-text{
     @apply absolute -left-12 top-1/2 text-base text-neutral-600 origin-center -rotate-90
@@ -186,7 +187,7 @@ about section
     @apply bg-transparent mt-5 text-center
 }
 .about-section .about-img .social-links a{
-    @apply inline-block w-10 h-10 rounded-full text-base text-center  text-neutral-600 mx-1 transition-all after:rounded-full hover:text-red-light
+    @apply inline-block w-10 h-10 rounded-full text-base text-center  text-neutral-600 mx-1 transition-all after:rounded-full hover:text-skin
 }
 .about-section .about-img .social-links a i{
     @apply leading-10
@@ -219,7 +220,7 @@ about section
     @apply opacity-60
 }
 .about-section .about-tabs .tab-item.active{
-    @apply text-red-light
+    @apply text-skin
 }
 .about-section .tab-content{
     @apply bg-transparent flex-grow-0 flex-shrink-0 basis-full max-w-full hidden
@@ -283,7 +284,7 @@ about section
     @apply -left-7
 }
 .about-section .timeline .timeline-item-inner .icon{
-    @apply w-10 h-10 text-center leading-10 absolute top-4 text-base border bg-neutral-50 border-neutral-200 rounded-full text-red-light
+    @apply w-10 h-10 text-center leading-10 absolute top-4 text-base border bg-neutral-50 border-neutral-200 rounded-full text-skin
 }
 .about-section .timeline .timeline-item:nth-child(odd) .icon{
     @apply -right-[70px]
@@ -292,7 +293,7 @@ about section
     @apply -left-[70px]
 }
 .about-section .timeline .timeline-item-inner span{
-    @apply font-medium text-red-light mb-3 capitalize
+    @apply font-medium text-skin mb-3 capitalize
 }
 .about-section .timeline .timeline-item-inner h3{
     @apply text-xl text-neutral-700 font-semibold mb-1 capitalize
@@ -319,7 +320,7 @@ service section
     @apply flex items-center justify-center flex-col py-12 px-4 rounded-md
 }
 .service-section .service-container .service-item .service-item-inner .icon:hover i{
-    @apply text-red-light 
+    @apply text-skin 
 }
 .service-section .service-container .service-item .service-item-inner .icon{
     @apply w-14 h-14 flex items-center justify-center rounded-full transition-all mb-7 relative
@@ -361,7 +362,7 @@ portfolio section
     @apply opacity-60
 }
 .portfolio-section .filter-item.active{
-    @apply text-red-light
+    @apply text-skin
 }
 .portfolio-section .portfolio-items{
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
@@ -388,7 +389,7 @@ portfolio section
     @apply -translate-y-6
 }
 .portfolio-section .portfolio-item-img .view-project{
-    @apply capitalize text-base font-medium text-red-light transition-all absolute left-0 -bottom-1 -translate-y-1 -z-10 opacity-0
+    @apply capitalize text-base font-medium text-skin transition-all absolute left-0 -bottom-1 -translate-y-1 -z-10 opacity-0
 }
 .portfolio-section .portfolio-item-inner:hover .view-project{
     @apply translate-y-0 opacity-100
@@ -454,7 +455,7 @@ portfolio-popup
     @apply font-normal
 }
 .portfolio-popup .pp-details-inner .info ul li a{
-    @apply text-red-light
+    @apply text-skin
 }
 .portfolio-popup .separator{
     @apply h-[1px] w-full bg-neutral-200
@@ -466,7 +467,7 @@ portfolio-popup
     @apply bg-transparent pt-16 pb-12 relative
 }
 .portfolio-popup .pp-project-details-btn{
-    @apply bg-transparent absolute left-0 top-4 h-10 leading-10 text-base font-medium text-red-light rounded-full after:rounded-full cursor-pointer px-4 transition-all
+    @apply bg-transparent absolute left-0 top-4 h-10 leading-10 text-base font-medium text-skin rounded-full after:rounded-full cursor-pointer px-4 transition-all
 }
 .portfolio-popup .pp-project-details-btn i{
     @apply ml-1
@@ -487,7 +488,7 @@ portfolio-popup
     @apply visible opacity-100
 }
 .portfolio-popup .pp-loader div{
-    @apply w-10 h-10 border-4 border-red-light rounded-full border-r-[3px] border-r-transparent animate-spin 
+    @apply w-10 h-10 border-4 border-skin rounded-full border-r-[3px] border-r-transparent animate-spin 
 }
 .portfolio-popup .pp-next,
 .portfolio-popup .pp-prev{
@@ -536,7 +537,7 @@ testimonial-secion
     @apply mt-8 text-center 
 }
 .testimonial-secion .testi-slider-nav span{
-    @apply w-10 h-10 rounded-full after:rounded-full text-red-light cursor-pointer transition-all text-xl inline-block last:ml-2
+    @apply w-10 h-10 rounded-full after:rounded-full text-skin cursor-pointer transition-all text-xl inline-block last:ml-2
 }
 .testimonial-secion .testi-slider-nav span i{
     @apply leading-10
@@ -554,7 +555,7 @@ contact section
     @apply flex flex-col items-center  py-8 px-4
 }
 .contact-section .contact-item i{
-    @apply text-red-light text-2xl
+    @apply text-skin text-2xl
 }
 .contact-section .contact-item span{
     @apply text-base font-semibold text-neutral-700 mt-3 mb-2

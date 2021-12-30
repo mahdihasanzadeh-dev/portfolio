@@ -1,0 +1,28 @@
+.style-switcher{
+    @apply fixed right-0 top-16 z-[120] p-4 w-52 rounded-md transition-all bg-transparent
+    translate-x-full
+}
+.style-switcher.open{
+    @apply -translate-x-4
+}
+.style-switcher .s-icon{
+    @apply absolute w-10 h-10 text-center text-xl text-neutral-900 right-full mr-4 cursor-pointer transition-all rounded-full after:rounded-full
+}
+.style-switcher .s-icon i{
+    @apply leading-10
+}
+.style-switcher .style-switcher-toggler{
+    @apply top-0
+}
+.style-switcher .day-night{
+    @apply top-14
+}
+.style-switcher h4{
+    @apply text-neutral-700 font-semibold text-base mb-3 capitalize
+}
+.style-switcher .colors {
+    @apply grid grid-cols-5 gap-1
+}
+.style-switcher .colors span{
+    @apply  w-8 h-8 border  rounded-full cursor-pointer
+}
