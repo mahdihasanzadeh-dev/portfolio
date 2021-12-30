@@ -1,11 +1,12 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
   content: ["./*.{html,js}"],
+  darkMode: 'class',
   theme: {
     colors:{
       transparent: 'transparent',
       gray: colors.gray,
-      violet: colors.violet,
+      white: colors.white,
       neutral: colors.neutral,
       skin:'var(--skin)',
       red:{

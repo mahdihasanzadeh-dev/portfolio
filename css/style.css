@@ -20,8 +20,14 @@ fonts
 /* ---------
 global style
 --------- */
+html.dark{
+    --outer-shadow:3px 3px 3px #222327, -3px -3px 3px #363636;
+    --outer-shadow-0:0 0 0 #222327, 0 0 0 #363636;
+    --inner-shadow:inset 3px 3px 3px #222327,inset -3px -3px 3px #363636;
+    --inner-shadow-0:inset 0 0 0 #222327,inset 0 0 0 #363636;
+}
 body{
-    @apply text-base overflow-x-hidden  leading-6 bg-neutral-50
+    @apply text-base overflow-x-hidden  leading-6 bg-neutral-50 dark:bg-neutral-800
 }
 body.hidden-scrolling{
     @apply overflow-y-hidden
@@ -79,7 +85,7 @@ body.hidden-scrolling{
     @apply bg-transparent py-0 px-4 flex-shrink-0 flex-grow-0 basis-full max-w-full text-center mb-14
 }
 .section-title h2{
-    @apply bg-transparent inline-block text-xl font-bold text-neutral-900 uppercase m-0 before:content-[attr(data-heading)] before:block before:text-sm before:font-semibold before:text-skin
+    @apply bg-transparent inline-block text-xl font-bold text-neutral-900 dark:text-white uppercase m-0 before:content-[attr(data-heading)] before:block before:text-sm before:font-semibold before:text-skin
 }
 .section.hide{
     @apply hidden
@@ -97,33 +103,36 @@ header
     @apply flex items-center justify-center w-10 h-10  flex-col cursor-pointer rounded-full transition-all relative z-10 after:rounded-[24px]
 }
 .header .hamburger-btn span{
-    @apply block h-[2px]  w-4 bg-neutral-900 relative mt-1
+    @apply block h-[2px]  w-4 bg-neutral-900   relative mt-1
 }
 .header .hamburger-btn span::before,
 .header .hamburger-btn span::after{
-    @apply content-[''] absolute left-0 w-full h-full bg-neutral-900
+    @apply content-[''] absolute left-0 w-full h-full bg-neutral-900 dark:bg-white
 }
 /* ------------
 navigation menu
 ------------ */
 .nav-menu{
-    @apply fixed bg-neutral-50 py-0 px-4 left-0 top-0 w-full h-full  overflow-y-auto -z-10 
+    @apply fixed bg-neutral-50 dark:text-neutral-800 py-0 px-4 left-0 top-0 w-full h-full  overflow-y-auto -z-10 
     hidden opacity-0
 }
 .fade-out-effect{
-    @apply fixed left-0 top-0 w-full h-full bg-neutral-50 -z-10 hidden
+    @apply fixed left-0 top-0 w-full h-full bg-neutral-50 dark:text-neutral-800 -z-10 hidden
 }
 .fade-out-effect.active{
     @apply block z-[110] animate-fadeOut
 }
 .nav-menu.open{
-    @apply block opacity-100 z-[100] transition-all
+    @apply block opacity-100 z-[100] transition-all 
+    dark:text-neutral-800 dark:bg-neutral-800
 }
 .nav-menu .close-nav-menu{
-    @apply w-10 h-10 block shadow-outer text-4xl leading-9 rounded-full absolute right-4 top-4 cursor-pointer text-center text-neutral-600 transition-all after:rounded-full 
+    @apply w-10 h-10 block shadow-outer text-4xl leading-9 rounded-full absolute right-4 top-4 cursor-pointer text-center text-neutral-600  transition-all after:rounded-full 
+    dark:bg-neutral-800 dark:text-white
 }
 .nav-menu-inner{
     @apply  min-h-screen relative flex items-center justify-center
+    
 }
 .nav-menu-inner ul{
     @apply  p-4
@@ -133,6 +142,7 @@ navigation menu
 }
 .nav-menu-inner ul li a{
     @apply inline-block text-3xl  font-semibold text-neutral-700 py-1 px-7 rounded-3xl capitalize transition-all after:rounded-3xl 
+    dark:text-white dark:bg-neutral-800
 }
 .nav-menu-inner ul li a.active{
     @apply text-skin
@@ -157,7 +167,7 @@ home section
     @apply text-neutral-300 text-lg capitalize m-0
 }
 .home-section .home-text h2{
-    @apply text-6xl font-bold text-neutral-900
+    @apply text-6xl font-bold text-neutral-900 dark:text-white
 }
 .home-section .home-text h1{
     @apply text-xl font-medium text-neutral-700 m-0 capitalize
@@ -169,7 +179,8 @@ home section
     @apply bg-transparent
 }
 .home-section .home-img .img-box{
-    @apply  max-w-md block m-auto rounded-full p-4
+    @apply  max-w-md block m-auto rounded-full p-4 bg-skin
+    dark:bg-transparent
 }
 .home-section .home-img .img-box img{
     @apply w-full rounded-full border-[10px] border-solid border-transparent
@@ -188,9 +199,11 @@ about section
 }
 .about-section .about-img .social-links a{
     @apply inline-block w-10 h-10 rounded-full text-base text-center  text-neutral-600 mx-1 transition-all after:rounded-full hover:text-skin
+    dark:hover:text-skin
 }
+
 .about-section .about-img .social-links a i{
-    @apply leading-10
+    @apply leading-10 dark:text-white
 }
 .about-section .about-img .img-box{
     @apply p-4 rounded
@@ -203,6 +216,7 @@ about section
 }
 .about-section .about-info p{
     @apply text-base leading-6 mb-4 text-neutral-600
+    dark:text-white
 }
 .about-section .about-info span{
     @apply font-semibold
@@ -215,6 +229,7 @@ about section
 }
 .about-section .about-tabs .tab-item{
     @apply inline-block mt-0 mb-3 mx-2 py-2 px-2 rounded-full transition-all text-base text-neutral-600 font-medium capitalize cursor-pointer
+    dark:text-white
 }
 .about-section .about-tabs .tab-item:hover:not(.active){
     @apply opacity-60
@@ -239,6 +254,7 @@ about section
 }
 .about-section .skills .skill-item p{
     @apply text-base text-neutral-600 capitalize mb-3
+    dark:text-white
 }
 .about-section .skills .skill-item .progress{
     @apply h-5 rounded-xl relative
@@ -248,6 +264,7 @@ about section
 }
 .about-section .skills .skill-item .progress-bar span{
     @apply absolute right-0 top-0 text-base font-medium text-neutral-600 -mt-10
+    dark:text-white
 }
 
 .about-section .experience,
@@ -320,7 +337,7 @@ service section
     @apply flex items-center justify-center flex-col py-12 px-4 rounded-md
 }
 .service-section .service-container .service-item .service-item-inner .icon:hover i{
-    @apply text-skin 
+    @apply text-skin  dark:text-skin
 }
 .service-section .service-container .service-item .service-item-inner .icon{
     @apply w-14 h-14 flex items-center justify-center rounded-full transition-all mb-7 relative
@@ -336,12 +353,15 @@ service section
 }
 .service-section .service-container .service-item .service-item-inner .icon i{
     @apply text-2xl transition-all
+    dark:text-white
 }
 .service-section .service-container .service-item .service-item-inner h3{
     @apply text-xl font-semibold text-neutral-700 mb-3 capitalize
+    dark:text-white
 }
 .service-section .service-container .service-item .service-item-inner p{
     @apply text-base  text-neutral-600 leading-7 text-center
+    dark:text-white
 }
 /* --------------
 portfolio section
@@ -357,6 +377,7 @@ portfolio section
 }
 .portfolio-section .filter-item{
     @apply inline-block mb-3 mx-4 py-1 px-3 rounded-full cursor-pointer font-medium text-neutral-600 capitalize text-base transition-all
+    dark:text-white
 }
 .portfolio-section .filter-item:hover:not(.active){
     @apply opacity-60
@@ -399,6 +420,7 @@ portfolio section
 }
 .portfolio-section .portfolio-item-inner p{
     @apply text-base text-neutral-600 capitalize mt-3
+    dark:text-white
 }
 /* ------------
 portfolio-popup
@@ -409,6 +431,7 @@ portfolio-popup
 }
 .portfolio-popup.open{
     @apply block opacity-100
+    dark:bg-neutral-800
 }
 
 .portfolio-popup .pp-details{
@@ -426,15 +449,18 @@ portfolio-popup
 }
 .portfolio-popup .pp-title h2{
     @apply text-3xl text-neutral-900 capitalize font-semibold mb-1
+    dark:text-white
 }
 .portfolio-popup .pp-title p{
     @apply text-sm font-semibold text-neutral-600 mb-4 pb-3 border-b border-neutral-300
+    dark:text-white
 }
 .portfolio-popup .pp-title p span{
     @apply font-normal capitalize
 }
 .portfolio-popup .pp-project-details h3{
     @apply text-xl font-semibold text-neutral-700 mb-4 capitalize
+    dark:text-white
 }
 .portfolio-popup .pp-details-inner .pp-project-details .row{
     @apply grid grid-cols-3
@@ -444,12 +470,14 @@ portfolio-popup
 }
 .portfolio-popup .pp-details-inner .description p{
     @apply text-neutral-600  text-sm leading-6
+    dark:text-white
 }
 .portfolio-popup .pp-details-inner .info{
     @apply col-span-1
 }
 .portfolio-popup .pp-details-inner .info ul li{
     @apply mb-3 last:mb-0 text-base text-neutral-600 font-semibold
+    dark:text-white
 }
 .portfolio-popup .pp-details-inner .info ul li span{
     @apply font-normal
@@ -474,12 +502,14 @@ portfolio-popup
 }
 .portfolio-popup .pp-close{
     @apply bg-transparent absolute right-0 w-10 h-10 top-4 rounded-full after:rounded-full flex items-center justify-center text-4xl text-neutral-600 cursor-pointer transition-all
+    dark:text-white
 }
 .portfolio-popup .pp-img{
     @apply max-w-full w-auto h-auto p-3 rounded
 }
 .portfolio-popup .pp-counter{
     @apply absolute right-0 h-10 leading-10 bottom-1 text-base text-neutral-600
+    dark:text-white
 }
 .portfolio-popup .pp-loader{
     @apply fixed left-0 top-0 w-full h-full bg-bgOpacity z-[100] flex items-center justify-center invisible opacity-0
@@ -493,16 +523,19 @@ portfolio-popup
 .portfolio-popup .pp-next,
 .portfolio-popup .pp-prev{
     @apply fixed top-2/4 w-10 h-10 bg-transparent text-center text-xl flex items-center justify-center cursor-pointer z-[60] text-neutral-600 transition-all opacity-50 hover:opacity-100
+    dark:text-white 
 }
 .portfolio-popup .pp-prev{
     @apply left-4
 }
 .portfolio-popup .pp-prev i{
     @apply rotate-180
+    
 }
 .portfolio-popup .pp-next{
     @apply right-4
 }
+
 /* ---------------
 testimonial-secion
 -------------- */
@@ -523,15 +556,18 @@ testimonial-secion
 }
 .testimonial-secion .testi-item i{
     @apply absolute text-3xl text-neutral-600 opacity-10
+    dark:text-white dark:opacity-100
 }
 .testimonial-secion .testi-item p{
     @apply text-base leading-7 text-neutral-600 mb-8 mt-3
+    dark:text-white
 }
 .testimonial-secion .testi-item img{
     @apply inline-block w-full max-w-[70px]
 }
 .testimonial-secion .testi-item span{
     @apply mt-3 text-base font-semibold text-neutral-700 capitalize block
+    dark:text-white
 }
 .testimonial-secion .testi-slider-nav{
     @apply mt-8 text-center 
@@ -559,18 +595,22 @@ contact section
 }
 .contact-section .contact-item span{
     @apply text-base font-semibold text-neutral-700 mt-3 mb-2
+    dark:text-white
 }
 .contact-section .contact-item p{
     @apply text-base text-neutral-600 leading-6 text-center break-words w-full
+    dark:text-white
 }
 .contact-section .contact-form{
-    @apply grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14 w-full text-base text-neutral-700 px-2 sm:px-0
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14 w-full text-base text-neutral-700 px-2 sm:px-0 placeholder:text-neutral-700
+    dark:text-white 
 }
 .contact-section .contact-form .input-group{
     @apply grid grid-cols-1 gap-6 
 }
 .contact-section .contact-form .input-group input{
     @apply rounded-3xl h-10 px-3 outline-none bg-transparent transition-all  hover:shadow-inner
+    
 }
 .contact-section .contact-form textarea{
     @apply w-full h-44 sm:h-full rounded-3xl px-3 py-2 outline-none bg-transparent transition-all hover:shadow-inner
