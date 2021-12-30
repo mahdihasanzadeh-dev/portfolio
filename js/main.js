@@ -208,3 +208,79 @@ function bodyScrollingToggle(){
     }
     slider()
 })();
+
+/*------navigation menu --------*/
+(()=>{
+    const hamburgerBtn = document.querySelector('.hamburger-btn')
+    const navMenu =document.querySelector('.nav-menu')
+    const closeNavBtn = navMenu.querySelector('.close-nav-menu')
+    hamburgerBtn.addEventListener('click',showNavMenu);
+    closeNavBtn.addEventListener('click',hideNavMenu)
+
+    function showNavMenu(){
+        navMenu.classList.add('open')
+        bodyScrollingToggle()
+    }
+    function hideNavMenu(){
+        navMenu.classList.remove('open')
+        fadeOutEffect()
+        bodyScrollingToggle()
+    }
+    function fadeOutEffect(){
+        document.querySelector('.fade-out-effect').classList.add('active')
+        setTimeout(()=>{
+            document.querySelector('.fade-out-effect').classList.remove('active')
+        },150)
+    }
+    //attach an event handler to document
+    document.addEventListener('click',(event)=>{
+        if(event.target.classList.contains('link-item')){
+            // make sure event.target.hash has a value before overriding default behavior
+            if(event.target.hash !==''){
+                // prevent default anchor click behavior
+                event.preventDefault()
+                const hash = event.target.hash;
+                // deactivate existing active section
+                document.querySelector('.section.active').classList.add('hide')
+                document.querySelector('.section.active').classList.remove('active')
+                //active new section
+                document.querySelector(hash).classList.add('active')
+                document.querySelector(hash).classList.remove('hide')
+                // deactive existing active navigation menu link-item
+                navMenu.querySelector('.active').classList.add('shadow-outer','hover-in-shadow')
+                navMenu.querySelector('.active').classList.remove('active','shadow-inner')
+                //if clicked  link-item is contained withing the navigation menu
+                if(navMenu.classList.contains('open')){
+                    //active new navigation menu link-item
+                    event.target.classList.add('active','shadow-inner')
+                    event.target.classList.remove('shadow-outer','hover-in-shadow')
+                    //hide navigation menu
+                    hideNavMenu()
+                }else{
+                    const navItems = navMenu.querySelectorAll('.link-item')
+                    navItems.forEach((item)=>{
+                        if(hash ===item.hash){
+                            item.classList.add('active','shadow-inner')
+                            item.classList.remove('shadow-outer','hover-in-shadow')
+                        }
+                    })
+                    fadeOutEffect()
+                }
+                //add hash(#) to url
+                window.location.hash = hash
+                
+            }
+        }
+    })
+})();
+
+
+/*------hide all section except active --------*/
+(()=>{
+    const sections = document.querySelectorAll('.section')
+    sections.forEach((section)=>{
+        if(!section.classList.contains('active')){
+            section.classList.add('hide')
+        }
+    })
+})()

@@ -27,7 +27,8 @@ module.exports = {
         'spin-slow':'spin 10s linear infinite',
         'bounce-slow':'bounce 2s ease-in-out infinite',
         'leftBounce':'leftBounce 3s ease-in-out infinite',
-        'fadeInTop':'fadeInTop 0.5s ease'
+        'fadeInTop':'fadeInTop 0.5s ease',
+        'fadeOut':'fadeOut 0.3s easee-out'
       },
       keyframes: {
         leftBounce: {
@@ -37,6 +38,10 @@ module.exports = {
         fadeInTop:{
           '0%': { opacity:0,transform: 'translateY(-25px)' },
           '100%': { opacity:1,transform: 'translateY(0px)' },
+        },
+        fadeOut:{
+          '0%': { opacity:1 },
+          '100%': { opacity:0 },
         }
       },
       transitionProperty:{

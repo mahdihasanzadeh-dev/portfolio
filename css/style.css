@@ -80,6 +80,9 @@ body.hidden-scrolling{
 .section-title h2{
     @apply bg-transparent inline-block text-xl font-bold text-neutral-900 uppercase m-0 before:content-[attr(data-heading)] before:block before:text-sm before:font-semibold before:text-red-light
 }
+.section.hide{
+    @apply hidden
+}
 /* ---
 header
 ------*/
@@ -103,7 +106,17 @@ header
 navigation menu
 ------------ */
 .nav-menu{
-    @apply fixed bg-neutral-50 py-0 px-4 left-0 top-0 w-full h-full  overflow-y-auto -z-10 hidden opacity-0
+    @apply fixed bg-neutral-50 py-0 px-4 left-0 top-0 w-full h-full  overflow-y-auto -z-10 
+    hidden opacity-0
+}
+.fade-out-effect{
+    @apply fixed left-0 top-0 w-full h-full bg-neutral-50 -z-10 hidden
+}
+.fade-out-effect.active{
+    @apply block z-[110] animate-fadeOut
+}
+.nav-menu.open{
+    @apply block opacity-100 z-[100] transition-all
 }
 .nav-menu .close-nav-menu{
     @apply w-10 h-10 block shadow-outer text-4xl leading-9 rounded-full absolute right-4 top-4 cursor-pointer text-center text-neutral-600 transition-all after:rounded-full 
